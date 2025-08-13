@@ -19,7 +19,7 @@ jobs:
 
       - name: Give execute permission for gradlew
         run: chmod +x ./gradlew
-        
+
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:

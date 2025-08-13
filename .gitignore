@@ -1,1 +1,2 @@
 build/\n.gradle/\n*.log\n.idea/\n*.iml\nout/
+.gitignore
