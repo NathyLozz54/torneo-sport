@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.torneo.domain.usecase.CrearVentaUseCaseTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-08-13T03:35:10" hostname="NATHALY-LOZANO" time="0.07">
+  <properties/>
+  <testcase name="guardarVenta_Exitoso()" classname="co.com.torneo.domain.usecase.CrearVentaUseCaseTest" time="0.053"/>
+  <testcase name="buscarVentaPorId_Encontrada()" classname="co.com.torneo.domain.usecase.CrearVentaUseCaseTest" time="0.004"/>
+  <testcase name="buscarVentas_Exitoso()" classname="co.com.torneo.domain.usecase.CrearVentaUseCaseTest" time="0.004"/>
+  <testcase name="buscarVentaPorId_NoEncontrada()" classname="co.com.torneo.domain.usecase.CrearVentaUseCaseTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
