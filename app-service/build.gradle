@@ -4,12 +4,8 @@ plugins {
     id 'java'
 }
 
-jar {
-    manifest {
-        attributes(
-                'Main-Class': 'co.com.torneo.TorneoApplication'
-        )
-    }
+springBoot {
+    mainClass = 'co.com.torneo.TorneoApplication'
 }
 
 dependencies {
