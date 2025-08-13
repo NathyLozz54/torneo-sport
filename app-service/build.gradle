@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '3.4.8'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+}
+
+springBoot {
+    mainClass = 'co.com.torneo.TorneoApplication'
+}
+
+dependencies {
+    implementation project(':domain:model')
+    implementation project(':domain:usecase')
+    implementation project(':infrastructure:driven-adapters')
+    implementation project(':infrastructure:entry-points')
+
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.projectlombok:lombok:1.18.28'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+
+    //JWT
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.5.4'
+    implementation 'org.springframework.boot:spring-boot-starter-security:3.5.4'
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+}

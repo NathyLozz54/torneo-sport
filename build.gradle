@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.8'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'io.projectreactor:reactor-core:3.6.2'
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+
+        implementation 'org.projectlombok:lombok:1.18.34'
+        annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+        // Para trabajar con Mono/Flux en pruebas
+        testImplementation 'io.projectreactor:reactor-test:3.6.5'
+
+        //MOCKS
+        testImplementation 'org.mockito:mockito-core:5.11.0'
+        testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
+
+        //JWT
+        implementation 'org.springframework.boot:spring-boot-starter-webflux:3.5.4'
+        implementation 'org.springframework.boot:spring-boot-starter-security:3.5.4'
+        implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+        runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+        runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+        //PROMETHEUS
+        implementation 'io.micrometer:micrometer-registry-prometheus:1.15.1'
+        implementation 'org.springframework.boot:spring-boot-starter-actuator:3.5.4'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

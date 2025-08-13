@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+compileJava {
+    options.compilerArgs += ["-parameters"]
+}
+
+dependencies {
+    implementation project(':domain:model')
+    implementation project(':domain:usecase')
+    implementation project(':infrastructure:driven-adapters:jwt')
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.5.4'
+    implementation 'org.springframework.boot:spring-boot-starter-security:3.5.4'
+    implementation 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    implementation 'io.projectreactor:reactor-core:3.6.2'
+}

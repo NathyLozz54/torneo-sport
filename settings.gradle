@@ -1,0 +1,23 @@
+
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
+}
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'torneo-esports'
+
+include('app-service')
+include('domain:model')
+include('domain:usecase')
+include('infrastructure:driven-adapters')
+include('infrastructure:entry-points')
+include 'infrastructure:driven-adapters:jwt'
+findProject(':infrastructure:driven-adapters:jwt')?.name = 'jwt'
+include 'infrastructure:driven-adapters:jwt'
+findProject(':infrastructure:driven-adapters:jwt')?.name = 'jwt'
+
