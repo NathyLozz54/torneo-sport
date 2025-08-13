@@ -4,9 +4,6 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.0'
 }
 
-springBoot {
-    mainClass = 'co.com.torneo.TorneoApplication'
-}
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -61,4 +58,7 @@ subprojects {
     test {
         useJUnitPlatform()
     }
+}
+tasks.bootJar {
+    enabled = false
 }
