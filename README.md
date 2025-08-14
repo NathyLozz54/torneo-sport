@@ -61,7 +61,7 @@ Endpoints principales
 #### API REST para:
 - torneos http://localhost:8080/torneos
 - ventas http://localhost:8080/ventas 
-- etapas de ventas http://localhost:8080/torneos/11/etapas
+- etapas de ventas http://localhost:8080/torneos/{ventas}/etapas
 - Authorización http://localhost:8080/auth/login
 
 
