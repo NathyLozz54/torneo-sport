@@ -1,0 +1,16 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/torneo_sport
+    username: postgresuser
+    password: postgrespass
+  flyway:
+    enabled: false
+    url: jdbc:postgresql://localhost:5432/torneo_sport
+    user: postgresuser
+    password: postgrespass
+    locations: classpath:db/migration
+
+logging:
+  level:
+    root: INFO
+    org.springframework.r2dbc.connection: DEBUG

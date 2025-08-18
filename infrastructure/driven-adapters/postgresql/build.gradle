@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.8'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':domain:model')
+    implementation project(':domain:usecase')
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation 'org.postgresql:postgresql'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc:3.5.4'
+    implementation 'io.r2dbc:r2dbc-postgresql:0.8.13.RELEASE'
+    implementation 'org.flywaydb:flyway-core:11.7.2'
+    implementation "org.flywaydb:flyway-database-postgresql:11.7.2"
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+tasks.bootJar {
+    enabled = false
+}
+
+

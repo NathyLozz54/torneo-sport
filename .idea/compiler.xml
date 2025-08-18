@@ -21,6 +21,7 @@
         <module name="torneo-esports.domain.model.main" />
         <module name="torneo-esports.infrastructure.driven-adapters.main" />
         <module name="torneo-esports.infrastructure.driven-adapters.jwt.main" />
+        <module name="torneo-esports.infrastructure.driven-adapters.postgresql.main" />
         <module name="torneo-esports.domain.main" />
       </profile>
     </annotationProcessing>

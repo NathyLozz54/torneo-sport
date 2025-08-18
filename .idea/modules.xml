@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-service/torneo-esports.app-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app-service/torneo-esports.app-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/model/torneo-esports.domain.model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/model/torneo-esports.domain.model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/usecase/torneo-esports.domain.usecase.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/usecase/torneo-esports.domain.usecase.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/jwt/torneo-esports.infrastructure.driven-adapters.jwt.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/jwt/torneo-esports.infrastructure.driven-adapters.jwt.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/torneo-esports.infrastructure.driven-adapters.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/torneo-esports.infrastructure.driven-adapters.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/postgresql/torneo-esports.infrastructure.driven-adapters.postgresql.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/postgresql/torneo-esports.infrastructure.driven-adapters.postgresql.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/entry-points/torneo-esports.infrastructure.entry-points.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/entry-points/torneo-esports.infrastructure.entry-points.main.iml" />
     </modules>
   </component>

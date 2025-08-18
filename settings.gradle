@@ -18,6 +18,6 @@ include('infrastructure:driven-adapters')
 include('infrastructure:entry-points')
 include 'infrastructure:driven-adapters:jwt'
 findProject(':infrastructure:driven-adapters:jwt')?.name = 'jwt'
-include 'infrastructure:driven-adapters:jwt'
-findProject(':infrastructure:driven-adapters:jwt')?.name = 'jwt'
+include 'infrastructure:driven-adapters:postgresql'
+findProject(':infrastructure:driven-adapters:postgresql')?.name = 'postgresql'
 

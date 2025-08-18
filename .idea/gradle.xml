@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/infrastructure" />
             <option value="$PROJECT_DIR$/infrastructure/driven-adapters" />
             <option value="$PROJECT_DIR$/infrastructure/driven-adapters/jwt" />
+            <option value="$PROJECT_DIR$/infrastructure/driven-adapters/postgresql" />
             <option value="$PROJECT_DIR$/infrastructure/entry-points" />
           </set>
         </option>

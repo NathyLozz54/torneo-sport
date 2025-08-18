@@ -1,0 +1,193 @@
+openapi: 3.0.0
+info:
+  title: Torneo Sports API
+  version: 1.0.0
+  description: API para la gestión de torneos de videojuegos y ventas asociadas.
+servers:
+  - url: http://localhost:8080
+    description: Servidor local de desarrollo
+  #- url: https://{tu-dominio}/api
+  #  description: Servidor de producción
+
+paths:
+  /torneos:
+    post:
+      summary: Crear un nuevo torneo
+      description: Crea un torneo de videojuegos con nombre, descripción y fechas.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TorneoRequest'
+      responses:
+        '201':
+          description: Torneo creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TorneoResponse'
+        '400':
+          description: Datos inválidos
+    get:
+      summary: Listar todos los torneos
+      description: Devuelve un listado de todos los torneos disponibles.
+      responses:
+        '200':
+          description: Lista de torneos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TorneoResponse'
+
+  /torneos/{id}:
+    get:
+      summary: Obtener un torneo por ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del torneo
+      responses:
+        '200':
+          description: Torneo encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TorneoResponse'
+        '404':
+          description: Torneo no encontrado
+
+  /ventas:
+    post:
+      summary: Crear una nueva venta
+      description: Registra una venta asociada a un torneo.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VentaRequest'
+      responses:
+        '201':
+          description: Venta registrada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VentaResponse'
+        '400':
+          description: Datos inválidos
+    get:
+      summary: Listar todas las ventas
+      description: Devuelve un listado de todas las ventas registradas.
+      responses:
+        '200':
+          description: Lista de ventas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VentaResponse'
+
+  /ventas/{id}:
+    get:
+      summary: Obtener una venta por ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID de la venta
+      responses:
+        '200':
+          description: Venta encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VentaResponse'
+        '404':
+          description: Venta no encontrada
+
+components:
+  schemas:
+    TorneoRequest:
+      type: object
+      required:
+        - nombre
+        - fechaInicio
+        - fechaFin
+      properties:
+        nombre:
+          type: string
+          example: Torneo League of Legends 2025
+        descripcion:
+          type: string
+          example: Competencia anual de League of Legends.
+        fechaInicio:
+          type: string
+          format: date
+          example: 2025-09-01
+        fechaFin:
+          type: string
+          format: date
+          example: 2025-09-10
+    TorneoResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 12345
+        nombre:
+          type: string
+        descripcion:
+          type: string
+        fechaInicio:
+          type: string
+          format: date
+        fechaFin:
+          type: string
+          format: date
+    VentaRequest:
+      type: object
+      required:
+        - torneoId
+        - cantidad
+        - precioUnitario
+      properties:
+        torneoId:
+          type: string
+          example: 12345
+        cantidad:
+          type: integer
+          example: 2
+        precioUnitario:
+          type: number
+          format: float
+          example: 50.0
+        tipo:
+          type: string
+          example: "Entrada VIP"
+    VentaResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: v001
+        torneoId:
+          type: string
+        cantidad:
+          type: integer
+        precioUnitario:
+          type: number
+          format: float
+        total:
+          type: number
+          format: float
+        tipo:
+          type: string
