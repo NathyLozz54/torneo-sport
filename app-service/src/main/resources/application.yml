@@ -9,6 +9,9 @@ spring:
     user: postgresuser
     password: postgrespass
     locations: classpath:db/migration
+  sql:
+    init:
+      mode: always
 
 logging:
   level:

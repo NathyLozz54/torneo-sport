@@ -16,7 +16,7 @@ services:
       - "3000:3000"
     depends_on:
       - prometheus
-  
+
   postgres:
     image: postgres:17
     container_name: postgres_torneo

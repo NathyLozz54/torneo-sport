@@ -13,16 +13,6 @@ CREATE TABLE torneos (
     eventos_gratuitos_creados INT NOT NULL DEFAULT 0
 );
 
--- Si después quieres etapas_venta como tabla aparte (porque es una lista):
-CREATE TABLE etapa_venta (
-    id SERIAL PRIMARY KEY,
-    torneo_id VARCHAR(50) ,
-    nombre VARCHAR(100),
-    fecha_inicio TIMESTAMP,
-    fecha_fin TIMESTAMP,
-    precio NUMERIC(10,2)
-);
-
 -- =======================
 -- Tabla: EtapaVenta
 -- =======================
